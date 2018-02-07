@@ -13,5 +13,11 @@ def write_():
     # CSV or JSON
     pass
 
-if __name__ == "__main__":
-    main()
+
+import glob
+list1=glob.glob('*.csv')
+    with open(list1, 'w') as outfile:
+        for fname in list1:
+            if fname != mlp6.csv
+             with open(fname) as infile:
+                everyone.csv.write(infile.read())
