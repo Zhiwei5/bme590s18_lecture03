@@ -2,39 +2,20 @@
 # coding: utf-8
 
 # In[1]:
-
-
 cd /Users/apple/bme590s18_lecture03/
 
 
 # In[84]:
-
-
 cfile=open('everyone.csv','w')
 import glob
 list1=glob.glob('*.csv')
 list1.remove('mlp6.csv')
 list1.remove('everyone.csv')
 print(list1)
-
-                
-
-
-
-                
-                
-                
-
-
 # In[114]:
 
-
 len(list1)
-
-
 # In[127]:
-
-
 mydata = []
 for name in list1:
     with open(name) as infile:
@@ -48,8 +29,6 @@ mydata
 
 
 # In[292]:
-
-
 import pandas as pd
 df =  pd.DataFrame(mydata,columns=['Firstname', 'lastname', 'NetID', 'Githubname', 'Teamname'])
 df
@@ -62,8 +41,6 @@ df.to_csv('everyone.csv', sep=',',index=False)
 
 
 # In[264]:
-
-
 def cameltest(x):
     return (x[4]!= x[4].lower() and x[4]!= x[4].upper())
 
@@ -75,24 +52,12 @@ for teamname in mydata:
 
 import sys       
 print('numer of non-camel:', a , file=sys.stdout)
-        
-
-
-# In[286]:
-
-
-print('numer of non-camel:', len(Camel_Case) , file=sys.stdout)
 
 
 # In[275]:
-
-
 df['Teamname'][1].replace(' ','')
 
-
 # In[189]:
-
-
 def spacetest(x):
     return (x[4].find(' ')!=-1)
 
@@ -100,12 +65,8 @@ for teamname in mydata:
     if spacetest(teamname)==True:
         print(teamname[4])
 
-     
-
 
 # In[258]:
-
-
 import csv
 import json
 for file in list1:
@@ -118,10 +79,5 @@ for file in list1:
             File.write('\n')
 
 
-# In[262]:
 
-
-with open('zk28.json') as f:
-    doc=json.load(f)
-doc.values()
 
